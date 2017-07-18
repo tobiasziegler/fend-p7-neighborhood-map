@@ -3,3 +3,6 @@ node_modules
 
 # gulp-gh-pages deployment folder
 .publish
+
+# Configuration file containing API keys
+config.js
