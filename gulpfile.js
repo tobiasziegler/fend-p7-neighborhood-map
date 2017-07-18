@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var ngrok = require('ngrok');
 var port = 3000;
+var deploy = require('gulp-gh-pages');
 var del = require('del');
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
@@ -85,4 +86,13 @@ gulp.task('serve:src', function() {
 			}
 		);
 	});
+});
+
+/**
+ * Push build to gh-pages:
+ * https://medium.com/superhighfives/deploying-to-github-pages-with-gulp-c06efc527de8
+ */
+gulp.task('deploy', function () {
+	return gulp.src("dist/**/*")
+	.pipe(deploy())
 });
