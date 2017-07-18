@@ -11,5 +11,12 @@
 </head>
 <body>
 	<div id="map"></div>
+
+	<!-- Download Knockout.js from CDN with a local fallback -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js" integrity="sha384-/EjRuG6YTb6zCFou+DBnYCi5u9E1RjUMJanyGOL7DUYLp6wSCUuHNhd58uoGj7jh" crossorigin="anonymous"></script>
+	<script>
+		window.ko || document.write('<script src="js/vendor/knockout-3.4.2.js" type="text/javascript"><\/script>');
+	</script>
+
 </body>
 </html>
