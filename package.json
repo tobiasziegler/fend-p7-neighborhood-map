@@ -14,5 +14,15 @@
   "bugs": {
     "url": "https://github.com/tobiasziegler/fend-p7-neighborhood-map/issues"
   },
-  "homepage": "https://github.com/tobiasziegler/fend-p7-neighborhood-map#readme"
+  "homepage": "https://github.com/tobiasziegler/fend-p7-neighborhood-map#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-uglify": "^3.0.0",
+    "ngrok": "^2.2.14",
+    "run-sequence": "^2.0.0"
+  }
 }
