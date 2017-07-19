@@ -1,10 +1,146 @@
+/* Set the box model and default text properties */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "Muli", sans-serif;
+	color: #fff;
+}
+
 html,
 body {
-	height: 100%;
 	margin: 0;
 	padding: 0;
 }
 
+/* Use vertical flexbox positioning to have the main section fill the screen
+ * height between the header and footer. */
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+#page-header {
+	background-color: #02b3e4;
+	margin: 0;
+	padding: 8px;
+}
+
+#page-title,
+#page-subtitle {
+	font-weight: 200;
+	margin: 0;
+}
+
+#page-title {
+	text-transform: uppercase;
+}
+
+/* Main section should flex to fill as much screen space as is available */
+#main {
+	flex: 1;
+}
+
+/* Map should fill its container (subject to fixed sidebar on wider screens) */
 #map {
 	height: 100%;
+	width: 100%;
+}
+
+/* Dynamic sidebar begins positioned off screen */
+#sidebar {
+	width: 320px;
+	padding: 8px;
+	position: absolute;
+	left: 0;
+	z-index: 1;
+	background-color: #2d3c49;
+	/* This transform moves the drawer off canvas. */
+	-webkit-transform: translate(-320px, 0);
+	transform: translate(-320px, 0);
+	/* Optionally, we animate the drawer. */
+	transition: transform 0.3s ease;
+}
+
+/* JavaScript adds an .open class to move the sidebar onto the screen */
+#sidebar.open {
+	-webkit-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+
+#sidebar-title {
+	font-size: 1em;
+}
+
+/* Styles the sidebar toggle as a round button and hides the text */
+#sidebar-button {
+	background-color: #2d3c49;
+	border-radius: 50%;
+	display: block;
+	position: relative;
+	width: 3em;
+	height: 3em;
+	margin: 8px;
+	text-indent: -1000em;
+}
+
+/* Places a search icon onto the toggle button */
+#sidebar-button::before {
+	font-family: FontAwesome;
+	content: "\f002";
+	position: relative;
+	left: 1001em;
+	top: 1em;
+	height: 3em;
+	width: 3em;
+}
+
+/* When the sidebar is open, the button changes to a close icon */
+#sidebar-button.open::before {
+	content: "\f00d";
+}
+
+#page-footer {
+	background-color: #02b3e4;
+}
+
+#colophon {
+	margin: 0;
+	padding: 8px;
+}
+
+/* Replace off-canvas sidebar with fixed display for wide screens */
+
+@media screen and (min-width: 960px) {
+
+	/* Use flexbox to produce multi-column layouts */
+
+	.grid-row {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.grid-cell {
+		flex: 1;
+	}
+
+	#page-subtitle {
+		text-align: right;
+	}
+
+	/* Hide the sidebar toggle button */
+	#sidebar-button {
+		display: none;
+	}
+
+	/* Bring the sidebar into its fixed position */
+	#sidebar {
+		flex: 0 0 33.33%;
+		position: static;
+		left: auto;
+		-webkit-transform: translate(0, 0);
+		transform: translate(0, 0);
+	}
 }
