@@ -24,6 +24,7 @@ body {
 
 #page-header {
 	background-color: #02b3e4;
+	flex: 0 1 auto;
 	margin: 0;
 	padding: 8px;
 }
@@ -38,9 +39,10 @@ body {
 	text-transform: uppercase;
 }
 
-/* Main section should flex to fill as much screen space as is available */
+/* Set a default height as a fallback but use flex-grow to try to fill screen */
 #main {
-	flex: 1;
+	flex: 1 1 auto;
+	height: 70%;
 }
 
 /* Map should fill its container (subject to fixed sidebar on wider screens) */
@@ -104,6 +106,7 @@ body {
 
 #page-footer {
 	background-color: #02b3e4;
+	flex: 1 1 auto;
 }
 
 #colophon {
