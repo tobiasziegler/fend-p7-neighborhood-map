@@ -43,3 +43,11 @@ var Locations = [
 		location: { lat: -33.2800973, lng: 149.0893966 }
 	}
 ];
+
+var ViewModel = function() {
+	var self = this;
+
+	self.locations = ko.observableArray(Locations);
+};
+
+ko.applyBindings(new ViewModel());

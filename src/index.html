@@ -19,6 +19,9 @@
 	<div id="main" class="grid-row">
 		<section id="sidebar" class="grid-cell">
 			<h3 id="sidebar-title">Filter or search locations</h3>
+			<ul id="location-list" data-bind="foreach: locations">
+				<li data-bind="text: name"></li>
+			</ul>
 		</section>
 		<div id="map" class="grid-cell"></div>
 	</div>
