@@ -8,6 +8,14 @@ function initMap() {
 		center: {lat: -33.283333, lng: 149.1},
 		zoom: 13
 	});
+
+	// Display the full set of markers on the map
+	vm.locations().forEach(function(location) {
+		var marker = new google.maps.Marker({
+			position: location.location,
+			map: map
+		});
+	});
 }
 
 // Locations array provides the model component of the app
@@ -50,4 +58,5 @@ var ViewModel = function() {
 	self.locations = ko.observableArray(Locations);
 };
 
-ko.applyBindings(new ViewModel());
+var vm = new ViewModel();
+ko.applyBindings(vm);
