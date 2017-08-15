@@ -12,7 +12,7 @@ function initMap() {
 	// Display the full set of markers on the map
 	vm.locations().forEach(function(location) {
 		var marker = new google.maps.Marker({
-			position: location.location,
+			position: location.position,
 			map: map
 		});
 	});
@@ -23,32 +23,32 @@ var Locations = [
 	{
 		name: 'The Hotel Canobolas',
 		address: '248 Summer St',
-		location: { lat: -33.2844163, lng: 149.1018213 }
+		position: { lat: -33.2844163, lng: 149.1018213 }
 	},
 	{
 		name: 'Parkview Hotel Orange',
 		address: '281 Summer St',
-		location: { lat: -33.2836838, lng: 149.1020493 }
+		position: { lat: -33.2836838, lng: 149.1020493 }
 	},
 	{
 		name: 'Eighteen 70',
 		address: '85 March St',
-		location: { lat: -33.2783207 , lng: 149.0922561 }
+		position: { lat: -33.2783207 , lng: 149.0922561 }
 	},
 	{
 		name: 'Sweet Sour Salt',
 		address: '116 Summer St',
-		location: { lat: -33.283295, lng: 149.0936483 }
+		position: { lat: -33.283295, lng: 149.0936483 }
 	},
 	{
 		name: 'Bills Beans East Orange',
 		address: '148 McLachlan St',
-		location: { lat: -33.2849981, lng: 149.1060653 }
+		position: { lat: -33.2849981, lng: 149.1060653 }
 	},
 	{
 		name: 'Byng Street Cafe & Local Store',
 		address: '47 Byng St',
-		location: { lat: -33.2800973, lng: 149.0893966 }
+		position: { lat: -33.2800973, lng: 149.0893966 }
 	}
 ];
 
