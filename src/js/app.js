@@ -15,7 +15,11 @@ function initMap() {
 			position: location.position,
 			map: map
 		});
+
+		location.marker = marker;
 	});
+
+	ko.applyBindings(vm);
 }
 
 // Locations array provides the model component of the app
@@ -62,13 +66,21 @@ var ViewModel = function() {
 
 	// Filter the locations based on search query
 	self.filteredLocations = ko.computed(function() {
-		if (!self.search) {
+		if (self.search() === '') {
+			self.locations().forEach(function(loc) {
+				if (loc.marker) {
+					loc.marker.setVisible(true);
+				}
+			});
 			return self.locations();
 		} else {
 			var query = self.search().toLowerCase();
 			return ko.utils.arrayFilter(self.locations(), function(loc) {
 				// Test whether the query matches the location name
 				var match = loc.name.toLowerCase().indexOf(query) !== -1;
+				if (loc.marker) {
+					loc.marker.setVisible(match);
+				}
 				return match;
 			});
 		}
@@ -76,4 +88,3 @@ var ViewModel = function() {
 };
 
 var vm = new ViewModel();
-ko.applyBindings(vm);
