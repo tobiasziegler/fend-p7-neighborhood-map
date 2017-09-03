@@ -76,6 +76,11 @@ body {
 	font-size: 1em;
 }
 
+input {
+	color: #2d3c49;
+	font-family: "Muli", sans-serif;
+}
+
 /* Styles the sidebar toggle as a round button and hides the text */
 #sidebar-button {
 	background-color: #2d3c49;

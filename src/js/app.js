@@ -56,6 +56,23 @@ var ViewModel = function() {
 	var self = this;
 
 	self.locations = ko.observableArray(Locations);
+
+	// Initialise the search query string, which is updated on user text input
+	self.search = ko.observable('');
+
+	// Filter the locations based on search query
+	self.filteredLocations = ko.computed(function() {
+		if (!self.search) {
+			return self.locations();
+		} else {
+			var query = self.search().toLowerCase();
+			return ko.utils.arrayFilter(self.locations(), function(loc) {
+				// Test whether the query matches the location name
+				var match = loc.name.toLowerCase().indexOf(query) !== -1;
+				return match;
+			});
+		}
+	});
 };
 
 var vm = new ViewModel();
