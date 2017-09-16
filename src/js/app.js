@@ -1,5 +1,6 @@
 // Create a map variable
-var map;
+var map,
+	infoWindow;
 
 // Initialize the map
 function initMap() {
@@ -9,11 +10,21 @@ function initMap() {
 		zoom: 13
 	});
 
+	// Create an InfoWindow object that will be used for whichever marker is selected.
+	infoWindow = new google.maps.InfoWindow();
+
 	// Display the full set of markers on the map
 	vm.locations().forEach(function(location) {
 		var marker = new google.maps.Marker({
 			position: location.position,
-			map: map
+			map: map,
+			title: location.name
+		});
+
+		marker.addListener('click', function() {
+			infoWindow.marker = marker;
+			infoWindow.setContent('<div>' + marker.title + '</div>');
+			infoWindow.open(map, marker);
 		});
 
 		location.marker = marker;
@@ -85,6 +96,11 @@ var ViewModel = function() {
 			});
 		}
 	});
+
+	// Trigger a marker's click event when the location is selected from the list
+	self.clickLocation = function(location) {
+		google.maps.event.trigger(location.marker, 'click');
+	};
 };
 
 var vm = new ViewModel();

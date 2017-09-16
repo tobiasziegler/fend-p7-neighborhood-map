@@ -21,7 +21,7 @@
 			<h3 id="sidebar-title">Filter or search locations</h3>
 			<input id="search" type="search" placeholder="Search for locations" data-bind="textInput: search" autocomplete="off" />
 			<ul id="location-list" data-bind="foreach: filteredLocations">
-				<li data-bind="text: name"></li>
+				<li data-bind="text: name, click: $parent.clickLocation"></li>
 			</ul>
 		</section>
 		<div id="map" class="grid-cell"></div>
