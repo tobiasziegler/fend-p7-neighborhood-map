@@ -13,7 +13,7 @@ function initMap() {
 	// Create an InfoWindow object that will be used for whichever marker is selected.
 	infoWindow = new google.maps.InfoWindow();
 
-	// Display the full set of markers on the map
+	// Display markers and configure/retrieve information for each location
 	vm.locations().forEach(function(location) {
 		var marker = new google.maps.Marker({
 			position: location.position,
@@ -30,7 +30,7 @@ function initMap() {
 			}, 2000);
 			// Configure and display the InfoWindow for the marker
 			infoWindow.marker = marker;
-			infoWindow.setContent('<div>' + marker.title + '</div>');
+			infoWindow.setContent(getInfoWindowContent(location));
 			infoWindow.open(map, marker);
 		});
 
@@ -38,6 +38,14 @@ function initMap() {
 	});
 
 	ko.applyBindings(vm);
+}
+
+// Assemble the content to display in the InfoWindow
+function getInfoWindowContent(location) {
+	var nameDiv = '<div>' + location.name + '<div>';
+	var addressDiv = '<div>' + location.address + '</div>';
+
+	return nameDiv + addressDiv;
 }
 
 // Locations array provides the model component of the app
