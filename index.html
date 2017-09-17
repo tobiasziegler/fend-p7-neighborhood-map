@@ -13,6 +13,9 @@
 		script.defer = true;
 		script.src = 'https://maps.googleapis.com/maps/api/js?v=3' +
 		'&key=' + config.GOOGLE_MAPS_KEY + '&callback=initMap';
+		script.onerror = function() {
+			alert('Google Maps failed to load. Check your connection and try again.');
+		}
 		document.body.appendChild(script);
 	}
 	window.onload = loadScript;</script></body></html>
