@@ -16,12 +16,14 @@ You have two options for viewing and testing the site:
 
 	1. Clone or download the master branch.
 
-	1. The repository's `master` branch doesn't include the Google Maps API key
-	that you'll need for the map to work. Obtain your own API key, then ensure
-	the `js` directory includes a `config.js` file that defines a JavaScript
-	object with variable `GOOGLE_MAPS_KEY` set to your key's value. To help you,
-	there is a `config-example.js` file that you can rename or copy and then
-	edit to paste your key into the appropriate place.
+	1. The repository's `master` branch doesn't include the Google Maps and
+	Foursquare API keys that you'll need for the map to work. Obtain your own
+	API keys by following the links to the APIs below, then ensure the `js`
+	directory includes a `config.js` file that defines a JavaScript object with
+	variables `GOOGLE_MAPS_KEY`, `FOURSQUARE_CLIENT_ID` and
+	`FOURSQUARE_CLIENT_SECRET` set to the respective values. To help you, there
+	is a `config-example.js` file that you can rename or copy and then edit to
+	paste your key into the appropriate place.
 
 	1. Run `npm install` to install dev dependencies.
 
@@ -32,3 +34,4 @@ You have two options for viewing and testing the site:
 ## Data Sources and APIs Used
 
 - [Google Maps APIs](https://developers.google.com/maps/)
+- [Foursquare API](https://developer.foursquare.com/)
