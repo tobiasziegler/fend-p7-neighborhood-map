@@ -26,7 +26,7 @@ function initMap() {
 			marker.setAnimation(google.maps.Animation.BOUNCE);
 			// Set a timeout to stop the animation
 			setTimeout(function() {
-				marker.setAnimation(null)
+				marker.setAnimation(null);
 			}, 2000);
 			// Configure and display the InfoWindow for the marker
 			infoWindow.marker = marker;
