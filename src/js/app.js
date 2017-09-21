@@ -27,7 +27,7 @@ function initMap() {
 			// Set a timeout to stop the animation
 			setTimeout(function() {
 				marker.setAnimation(null);
-			}, 2000);
+			}, 2100);
 			// Configure and display the InfoWindow for the marker
 			infoWindow.marker = marker;
 			infoWindow.setContent(getInfoWindowContent(location));
