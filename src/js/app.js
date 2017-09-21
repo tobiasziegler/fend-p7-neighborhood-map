@@ -60,7 +60,7 @@ function requestAPIData(location) {
 		}
 	})
 	.fail(function() {
-		console.log('Foursquare API data for ' + location.name + ' could not be loaded.');
+		$('#foursquare-error').show();
 	});
 }
 
