@@ -16,7 +16,7 @@
 	</header>
 
 	<div id="main" class="grid-row">
-		<aside id="sidebar" class="grid-cell">
+		<aside id="sidebar" class="grid-cell" data-bind="css: { 'open': sidebarVisible }">
 			<h3 id="sidebar-title">Filter or search locations</h3>
 			<input id="search" type="search" placeholder="Search for locations" data-bind="textInput: search" autocomplete="off" />
 			<ul id="location-list" data-bind="foreach: filteredLocations">
@@ -27,7 +27,7 @@
 	</div>
 
 	<footer id="page-footer">
-		<div><a id="sidebar-button">Toggle the sidebar</a></div>
+		<div><a id="sidebar-button" data-bind="click: sidebarToggle">Toggle the sidebar</a></div>
 		<p id="colophon"><small>Powered by the <a href="https://developers.google.com/maps/">Google Maps APIs</a> and the <a href="https://developer.foursquare.com/">Foursquare API</a><span id="foursquare-error">Warning: Foursquare API data could not be loaded and location data is incomplete.</span></small></p>
 	</footer>
 
@@ -60,7 +60,6 @@
 	<script src='js/config.js'></script>
 
 	<!-- Load the scripts containing the site's main functionality -->
-	<script src="js/sidebar.js"></script>
 	<script src="js/data.js"></script>
 	<script src="js/app.js"></script>
 

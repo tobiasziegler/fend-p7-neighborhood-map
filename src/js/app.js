@@ -88,6 +88,9 @@ function getInfoWindowContent(location) {
 var ViewModel = function() {
 	var self = this;
 
+	// Set the mobile sidebar to be off by default
+	self.sidebarVisible = ko.observable(false);
+
 	self.locations = ko.observableArray(locations);
 
 	// Initialise the search query string, which is updated on user text input
@@ -118,6 +121,11 @@ var ViewModel = function() {
 	// Trigger a marker's click event when the location is selected from the list
 	self.clickLocation = function(location) {
 		google.maps.event.trigger(location.marker, 'click');
+	};
+
+	// Toggle the sidebar display
+	self.sidebarToggle = function() {
+		self.sidebarVisible(!self.sidebarVisible());
 	};
 };
 
