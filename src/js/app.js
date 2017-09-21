@@ -86,7 +86,7 @@ function getInfoWindowContent(location) {
 }
 
 // Locations array provides the model component of the app
-var Locations = [
+var locations = [
 	{
 		name: 'The Hotel Canobolas',
 		address: '248 Summer St',
@@ -128,7 +128,7 @@ var Locations = [
 var ViewModel = function() {
 	var self = this;
 
-	self.locations = ko.observableArray(Locations);
+	self.locations = ko.observableArray(locations);
 
 	// Initialise the search query string, which is updated on user text input
 	self.search = ko.observable('');
