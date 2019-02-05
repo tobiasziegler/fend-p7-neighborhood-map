@@ -16,14 +16,14 @@
   },
   "homepage": "https://github.com/tobiasziegler/fend-p7-neighborhood-map#readme",
   "devDependencies": {
-    "browser-sync": "^2.18.12",
+    "browser-sync": "^2.26.3",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-cssnano": "^2.1.2",
+    "gulp-cssnano": "^2.1.3",
     "gulp-gh-pages": "^0.5.4",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-uglify": "^3.0.0",
-    "ngrok": "^2.2.14",
-    "run-sequence": "^2.0.0"
+    "gulp-uglify": "^3.0.1",
+    "ngrok": "^2.3.0",
+    "run-sequence": "^2.2.1"
   }
 }
